@@ -8,13 +8,10 @@ Windows Server 2025 was installed within the NORTHSTAR-DC01 virtual machine.
 
 The installation process included:
 
-Selecting the Windows Server 2025 Standard Evaluation image.
-
-Selecting the Desktop Experience installation option.
-
-Installing the operating system to the allocated 60 GB virtual disk.
-
-Completing installation and booting into Windows Server.
+- Selecting the Windows Server 2025 Standard Evaluation image.
+- Selecting the Desktop Experience installation option.
+- Installing the operating system to the allocated 60 GB virtual disk.
+- Completing installation and booting into Windows Server.
 
 ## Server Configuration
 
@@ -22,47 +19,29 @@ After installation, Server Manager was used to review the initial server configu
 
 The server was identified as:
 
-Hostname: NORTHSTAR-DC01
-
-Operating System: Windows Server 2025 Standard Evaluation
-
-Workgroup: WORKGROUP
-
-Remote Management: Enabled
-
-Remote Desktop: Disabled
+- **Hostname**: NORTHSTAR-DC01
+- **Operating System**: Windows Server 2025 Standard Evaluation
+- **Workgroup**: WORKGROUP
+- **Remote Management**: Enabled
+- **Remote Desktop**: Disabled
 
 ## Initial Network Configuration
 
 PowerShell was used to inspect the network configuration:
 
+```powershell
 Get-NetIPConfiguration
+```
 
 The output showed:
 
-Property
-
-Value
-
-Interface
-
-Ethernet
-
-Adapter
-
-Intel PRO/1000 MT Desktop Adapter
-
-IPv4 Address
-
-10.10.10.10
-
-DNS Server
-
-10.10.10.10
-
-Default Gateway
-
-Not configured
+| Property | Value |
+|---|---|
+| Interface | Ethernet |
+| Adapter | Intel PRO/1000 MT Desktop Adapter |
+| IPv4 Address | 10.10.10.10 |
+| DNS Server | 10.10.10.10 |
+| Default Gateway | Not configured |
 
 ## Validation
 The following initial deployment checks were completed:
@@ -77,13 +56,10 @@ PowerShell returned network configuration information.
 
 ## Next Steps
 
-Verify VirtualBox network mode.
-
-Validate IP addressing and DNS configuration.
-
-Install Active Directory Domain Services.
-
-Promote NORTHSTAR-DC01 to a domain controller.
+- Verify VirtualBox network mode.
+- Validate IP addressing and DNS configuration.
+- Install Active Directory Domain Services.
+- Promote NORTHSTAR-DC01 to a domain controller.
 
 ## Evidence
 

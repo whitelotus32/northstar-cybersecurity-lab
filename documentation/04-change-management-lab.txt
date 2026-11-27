@@ -1,0 +1,78 @@
+# Change Request NS-CHG-001
+
+## 1. Change Summary
+
+**Change ID:** NS-CHG-001  
+**Title:** Configure a Windows Interactive Logon Message  
+**Environment:** Northstar Active Directory Lab  
+**Domain:** northstar.local  
+**Change Type:** Standard lab change  
+**Risk Level:** Low  
+**Status:** Planned
+
+## 2. Request and Objective
+
+The objective of this change is to configure a custom interactive logon message through Group Policy to demonstrate centralized Windows security policy management.
+
+The message informs users that the system is part of the Northstar cybersecurity training lab and that access is limited to authorized lab users.
+
+## 3. Scope
+
+The change is limited to the `Test-Policy` Organizational Unit (OU).
+
+The Group Policy Object (GPO) is:
+
+`NS-GPO-001 - Test Logon Message`
+
+The GPO must remain linked only to the designated test OU during this exercise.
+
+## 4. Risk Assessment
+
+**Potential risks:**
+- The message may be incorrectly configured or contain unintended text.
+- Linking the GPO to the wrong OU could affect unintended systems.
+- The policy may not apply until a compatible domain-joined client is available.
+
+**Risk mitigation:**
+- Verify the GPO link and scope before testing.
+- Review both logon message policy settings.
+- Do not link the GPO at the domain level.
+- Use a test client for validation when available.
+
+## 5. Approval
+
+**Approval Type:** Simulated approval for educational lab purposes  
+**Approver:** Lab administrator  
+**Approval Status:** Approved for controlled lab implementation
+
+## 6. Implementation Plan
+
+1. Confirm the GPO is linked to the `Test-Policy` OU. GPO configured: Yes
+2. Verify the configured logon message title and text. GPO linked to Test-Policy OU: Yes
+3. Confirm the GPO is not linked at the domain level. Domain-level link: No
+4. Document the configuration and capture evidence. Client-side verification: Pending
+
+## 7. Verification Plan
+
+When a compatible domain-joined Windows client is available:
+
+1. Place the test computer account in the intended policy scope.
+2. Refresh Group Policy.
+3. Confirm the interactive logon message appears.
+4. Record the result and capture verification evidence.
+
+**Current limitation:** The Northstar workstation computer object is not yet a domain-joined client. GPO configuration and linking can be documented now, but client-side policy enforcement remains pending.
+
+## 8. Rollback Plan
+
+If the change causes an unexpected result:
+
+1. Open Group Policy Management.
+2. Unlink or disable the GPO from the `Test-Policy` OU.
+3. Confirm the policy is no longer in scope.
+4. Refresh Group Policy on the test client, if available.
+5. Record the rollback result.
+
+## 9. Change Closure
+
+The change may be marked complete after the configuration is reviewed and the verification results are documented. If client-side verification has not yet occurred, record the change as configured but awaiting validation.
